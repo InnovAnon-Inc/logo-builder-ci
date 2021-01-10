@@ -1,0 +1,6 @@
+version: '3.3'
+services:
+  logo-builder-ci:
+    build: .
+    image: innovanon/logo-builder-ci
+
