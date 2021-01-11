@@ -1,6 +1,7 @@
 FROM innovanon/logo-builder as builder
 ENV GOPATH=${HOME}/go
 ENV PATH=${PATH}:${HOME}/go/bin
+#ENV PATH=${PATH}:${GOPATH}/bin
 COPY ./dpkg.list  /tmp/
 RUN sleep 31                        \
  && apt update                      \
@@ -9,4 +10,8 @@ RUN sleep 31                        \
  && apt install $(/tmp/dpkg.list)   \
  && rm -v         /tmp/dpkg.list    \
  && go get -u github.com/tcnksm/ghr
+
+RUN command -v ghr
+
+# && command -v                  ghr
 
