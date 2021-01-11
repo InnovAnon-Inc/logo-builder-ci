@@ -9,9 +9,6 @@ RUN sleep 31                        \
  && test -x       /tmp/dpkg.list    \
  && apt install $(/tmp/dpkg.list)   \
  && rm -v         /tmp/dpkg.list    \
- && go get -u github.com/tcnksm/ghr
-
-RUN command -v ghr
-
-# && command -v                  ghr
+ && go get -u github.com/tcnksm/ghr \
+ && command -v                  ghr
 
