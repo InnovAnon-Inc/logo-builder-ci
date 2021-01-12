@@ -13,3 +13,6 @@ RUN sleep 31                        \
  && go get -u github.com/tcnksm/ghr \
  && command -v                  ghr
 
+FROM scratch as squash
+COPY --from=builder / /
+
