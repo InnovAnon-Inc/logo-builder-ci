@@ -1,8 +1,9 @@
 FROM innovanon/logo-builder as builder
-ENV GOPATH=${HOME}/go
-ENV PATH=${PATH}:${HOME}/go/bin
+#ENV GOPATH=${HOME}/go
+#ENV PATH=${PATH}:${HOME}/go/bin
 #ENV PATH=${PATH}:${GOPATH}/bin
 COPY ./dpkg.list  /tmp/
+COPY ./gopath.sh  /etc/profile.d/
 RUN sleep 31                        \
  && apt update                      \
  && apt full-upgrade                \
